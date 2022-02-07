@@ -9,8 +9,8 @@ from numpy.testing import assert_equal, assert_allclose
 d_pat = r'\d+.\d*'
 let_pat = r'[A-Z]'
 right_answers = [
-    {'a', 'b', 'e'},
-    {'a', 'c', 'e', 'f'},
+    {'A', 'B', 'E'},
+    {'A', 'C', 'E', 'F'},
     3.336e-10
 ]
 
