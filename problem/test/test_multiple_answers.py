@@ -1,6 +1,7 @@
 # from ..m_choice import *
 import numpy as np
 import re
+import os
 from numpy.testing import assert_equal, assert_allclose
 
 
