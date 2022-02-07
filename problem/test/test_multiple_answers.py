@@ -35,6 +35,6 @@ except:
     print(os.getcwd())
 
 print(f"Your score is {score}/{len(right_answers)}")
-
+assert(score == len(right_answers)
 
 
