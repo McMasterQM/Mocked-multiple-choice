@@ -16,6 +16,7 @@ right_answers = [
 i = 0
 score = 0
 answer = '**Answer**'
+print(os.getcwd())
 with open(r"../m_choice.py", 'r') as f:
     for line in f.readlines():
         if answer in line:
