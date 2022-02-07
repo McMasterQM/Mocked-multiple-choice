@@ -17,19 +17,22 @@ right_answers = [
 i = 0
 score = 0
 answer = '**Answer**'
-print(os.getcwd())
-with open(r"../m_choice.py", 'r') as f:
-    for line in f.readlines():
-        if answer in line:
-            ind = line.find(answer) + len(answer)
-            new_line = line.upper()[ind:]
-            answers_digits = [float(x) for x in re.findall(d_pat, new_line)]
-            answers_letters = set(re.findall(let_pat, new_line))
 
-            if answers_letters == right_answers[i] or\
-                (len(answers_digits)>0 and np.allclose(answers_digits, right_answers[i])):
-                score += 1
-            i += 1
+try:
+    with open(r"../m_choice.py", 'r') as f:
+        for line in f.readlines():
+            if answer in line:
+                ind = line.find(answer) + len(answer)
+                new_line = line.upper()[ind:]
+                answers_digits = [float(x) for x in re.findall(d_pat, new_line)]
+                answers_letters = set(re.findall(let_pat, new_line))
+
+                if answers_letters == right_answers[i] or\
+                    (len(answers_digits)>0 and np.allclose(answers_digits, right_answers[i])):
+                    score += 1
+                i += 1
+except:
+    print(os.getcwd())
 
 print(f"Your score is {score}/{len(right_answers)}")
 
